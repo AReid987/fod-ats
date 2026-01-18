@@ -1,0 +1,24 @@
+
+
+Senior Data Analyst Position
+
+Required Skills:
+- SQL and NoSQL databases
+- Python programming
+- Data visualization (Tableau/PowerBI)
+- Statistical analysis
+- A/B testing implementation
+
+Preferred Skills:
+- Machine learning fundamentals
+- Cloud platforms (AWS/GCP)
+- ETL pipeline development
+- Big Data technologies
+
+Responsibilities:
+- Analyze large datasets to identify trends
+- Create dashboards for business metrics
+- Design and implement A/B tests
+- Collaborate with engineering teams
+- Present findings to stakeholders
+

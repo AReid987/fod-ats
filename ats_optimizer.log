@@ -1,0 +1,8 @@
+2025-06-24 23:15:01,567 - INFO - Starting FOD ATS optimization pipeline
+2025-06-24 23:15:01,568 - INFO - Running agent: agent_zero
+2025-06-24 23:15:01,638 - ERROR - agent_zero failed: Traceback (most recent call last):
+  File "/Users/antonioreid/FOD_ATS/agent_zero.py", line 7, in <module>
+    import nltk
+ModuleNotFoundError: No module named 'nltk'
+
+2025-06-24 23:15:01,639 - ERROR - Pipeline halted at agent_zero

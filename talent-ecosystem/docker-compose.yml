@@ -1,0 +1,41 @@
+
+
+
+version: '3.8'
+services:
+  memgraph:
+    image: memgraph/memgraph:2.11.0
+    ports:
+      - "7687:7687"
+    volumes:
+      - mg_data:/var/lib/memgraph
+    environment:
+      - MEMGRAPH="--bolt-server-name-for-init=Neo4j/1.0"
+
+  chromadb:
+    image: chromadb/chroma:0.4.24
+    ports:
+      - "8000:8000"
+    environment:
+      - CHROMA_SERVER_AUTHN_PROVIDER=token
+      - CHROMA_SERVER_AUTHN_CREDENTIALS=test-token
+      - CHROMA_SERVER_AUTHN_CREDENTIALS_PROVIDER=chromadb.auth.token_authn.TokenConfigServerAuthnProvider
+    command: uvicorn chromadb.app:app --reload --workers 1 --host 0.0.0.0 --port 8000
+
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - memgraph
+      - chromadb
+    environment:
+      - MEMGRAPH_HOST=memgraph
+      - CHROMA_HOST=chromadb
+
+volumes:
+  mg_data:
+
+

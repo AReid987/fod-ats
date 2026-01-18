@@ -1,0 +1,26 @@
+
+{
+  "email": "your_email@example.com",
+  "schedule": [
+    {
+      "name": "Start Keyword Strategy",
+      "date": "2025-07-01",
+      "message": "Begin Phase 1: Target Identification and Keyword Harvesting"
+    },
+    {
+      "name": "Start Resume Remastering",
+      "date": "2025-07-07",
+      "message": "Begin Phase 2: Template Selection and Content Development"
+    },
+    {
+      "name": "Start AI Augmentation",
+      "date": "2025-07-14",
+      "message": "Begin Phase 3: Implement Fabric AI and Roo Code"
+    },
+    {
+      "name": "Start Testing",
+      "date": "2025-07-21",
+      "message": "Begin Phase 5: A/B Testing and Performance Review"
+    }
+  ]
+}

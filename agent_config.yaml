@@ -1,0 +1,47 @@
+
+
+# FOD ATS Agent Configuration
+agents:
+  agent_zero:
+    role: "Keyword Extraction & Analysis"
+    input: "job_description.txt"
+    output: "keywords.json"
+    parameters:
+      min_occurrence: 3
+      semantic_grouping: true
+
+  rovodev:
+    role: "ATS Simulation & Scoring"
+    input: 
+      - "resume.md"
+      - "keywords.json"
+    output: "ats_score.json"
+    parameters:
+      threshold: 85
+      strict_mode: false
+
+  fabric_ai:
+    role: "Content Enhancement & Rewriting"
+    input: "resume.md"
+    output: "enhanced_resume.md"
+    parameters:
+      style: "professional"
+      keyword_density: 0.05
+      max_length: 800
+
+  openhands:
+    role: "Job Description Cross-Reference"
+    input: 
+      - "job_description.txt"
+      - "enhanced_resume.md"
+    output: "match_report.md"
+    parameters:
+      required_skills: 90
+      preferred_skills: 70
+
+workflow:
+  - agent_zero
+  - fabric_ai
+  - rovodev
+  - openhands
+
